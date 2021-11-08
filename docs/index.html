@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon-2021</title>
+    <title>Хакатон 2021</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -15,48 +16,139 @@
             height: 100vh;
         }
 
+        html {
+            background: rgb(233,233,233);
+            background: linear-gradient(162deg, rgba(233,233,233,1) 0%, rgba(213,213,245,1) 100%);
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #ececec;
+            user-select: none;
         }
 
         .bg-loading {
-            background: #ececec url(loading.gif) no-repeat 50% 50%;
+            background: url(loading.gif) no-repeat 50% 50%;
             background-size: 20%;
         }
 
         #main {
+            padding: 0 20px;
             flex: 1;
             max-width: 640px;
             height: 240px;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Roboto, Arial, Helvetica, sans-serif;
+        }
 
+        #main div {
             transition: opacity 0.4s ease;
         }
 
         #header {
-            margin-bottom: 25px;
+            margin-bottom: 5px;
             font-size: 40px;
             color: #47245c;
+            font-weight: 500;
         }
 
-        #link {
-            display: block;
+        #subheader {
+            margin-bottom: 35px;
+            font-size: 30px;
+            color: #735b81;
+            font-weight: 100;
+        }
+
+        #linkscontainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        a {
             font-size: 25px;
+            color: #466ef1;
+            transition: color 0.1s ease;
+        }
+
+        a:hover {
+            color: #8da6f7;
+            transition: color 0.1s ease;
+        }
+
+        #pojectlink {
+            display: inline-block;
+            margin: 0 auto 40px;
+            padding: 10px 50px;
+            border-radius: 4px;
+
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(90deg, #7b98e9 0%, #7ee0e0 100%);
+            box-shadow: 0px 0px 25px 0px #8bd0f780;
+            text-shadow: 0 1px 0 #5f7ed3;
+
+            transition: opacity 0.2s ease;
+        }
+
+        #pojectlink:hover {
+            opacity: 0.7;
+
+            transition: opacity 0.2s ease;
+        }
+
+        .github-link {
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+            color: black;
         }
 
         .hide {
+            height: 0;
             opacity: 0;
             pointer-events: none;
+        }
+
+        @media (max-width: 480px) {
+            #main {
+                text-align: center;
+            }
+            #header {
+                font-size: 30px;
+            }
+            #subheader {
+                font-size: 25px;
+            }
         }
     </style>
 </head>
 <body class="bg-loading">
-    <main id="main" class="hide">
-        <h2 id="header">Service currently offline</h2>
-        <a href="https://github.com/KostarSf/hackathon-app" id="link">Back to GitHub</a>
+    <main id="main">
+        <div id="success" class="hide">
+            <h2 id="header">Хакатон 2021</h2>
+            <h3 id="subheader">Проект команды Dungeon Masters</h3>
+            <div id="linkscontainer">
+                <a href="http://62.183.21.96:3000" id="pojectlink">Перейти</a>
+
+            </div>
+            <a href="http://62.183.21.96:3000" class="github-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+                Source
+            </a>
+        </div>
+        <div id="failure" class="hide">
+            <h2 id="subheader">Сервис временно недоступен</h2>
+            <a href="https://github.com/KostarSf/hackathon-app" id="link">Вернуться на GitHub</a>
+        </div>
     </main>
     <script src="jquery-3.6.0.min.js"></script>
     <script>
@@ -66,11 +158,12 @@
             data: {type: 'ping'},
             cache: false,
             success: (output) => {
-                window.location.replace("http://62.183.21.96:3000");
+                $("body").removeClass("bg-loading");
+                $("#success").removeClass("hide");
             },
             error: (output) => {
-                $("#main").removeClass("hide");
                 $("body").removeClass("bg-loading");
+                $("#failure").removeClass("hide");
             }
         })
     </script>
