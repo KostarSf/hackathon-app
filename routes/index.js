@@ -7,7 +7,11 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res) => {
   console.log(req.body);
-  res.send('got a post');
+  if (req.body.type === 'ping') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+    res.send({ type: 'ping', success: true });
+  }
 });
 
 module.exports = router;
