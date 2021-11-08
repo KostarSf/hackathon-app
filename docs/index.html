@@ -5,7 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathon-2021</title>
-    <!-- <meta http-equiv="refresh" content="0;URL=http://62.183.21.96:3000" /> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100vh;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ececec;
+        }
+
+        .bg-loading {
+            background: #ececec url(loading.gif) no-repeat 50% 50%;
+            background-size: 20%;
+        }
+
+        #main {
+            flex: 1;
+            max-width: 640px;
+            height: 240px;
+            font-family: Arial, Helvetica, sans-serif;
+
+            transition: opacity 0.4s ease;
+        }
+
+        #header {
+            margin-bottom: 25px;
+            font-size: 40px;
+            color: #47245c;
+        }
+
+        #link {
+            display: block;
+            font-size: 25px;
+        }
+
+        .hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body class="bg-loading">
     <main id="main" class="hide">
