@@ -60,7 +60,19 @@
     </main>
     <script src="jquery-3.6.0.min.js"></script>
     <script>
-        $.post("http://62.183.21.96:3000", "{type: 'ping'}");
+        $.ajax({
+            type: "POST",
+            url: "http://62.183.21.96:3000",
+            data: {type: 'ping'},
+            cache: false,
+            success: (output) => {
+                window.location.replace("http://62.183.21.96:3000");
+            },
+            error: (output) => {
+                $("#main").removeClass("hide");
+                $("body").removeClass("bg-loading");
+            }
+        })
     </script>
 </body>
 </html>
