@@ -7,7 +7,11 @@
     <title>Hackathon-2021</title>
     <!-- <meta http-equiv="refresh" content="0;URL=http://62.183.21.96:3000" /> -->
 </head>
-<body>
+<body class="bg-loading">
+    <main id="main" class="hide">
+        <h2 id="header">Service currently offline</h2>
+        <a href="https://github.com/KostarSf/hackathon-app" id="link">Back to GitHub</a>
+    </main>
     <script src="jquery-3.6.0.min.js"></script>
     <script>
         $.post("http://62.183.21.96:3000", "{type: 'ping'}");
