@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Hackathon 2021: Dungeon Masters' });
+  res.render('index', { title: 'kostarsf.space' });
 });
 
 router.post('/', (req, res) => {

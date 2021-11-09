@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  form(method="post", id="login-form")
+    p
+      input(type="email", name="email", id="login-email", placeholder="Почта")
+    p
+      input(type="password", name="password", id="login-password", placeholder="Пароль")
+    br
+    p
+      input(type="submit", value="Войти", id="login-submit")
+    p(id="login-message", style="max-width: 100%; overflow: auto;")
+
+block scripts
+  script(src="/js/login.js")
