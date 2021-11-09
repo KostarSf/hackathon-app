@@ -6,7 +6,6 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body);
   if (req.body.type === 'ping') {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
