@@ -29,4 +29,8 @@ router.post('/login', (req, res) => {
   res.json(response);
 });
 
+router.get('/current_day', (req, res) => {
+  res.render('itru/current_day', { title: 'ITRU - Текущее занятие' });
+})
+
 module.exports = router;
