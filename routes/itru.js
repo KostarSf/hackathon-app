@@ -15,11 +15,16 @@ router.post('/login', (req, res) => {
     message: String
   };
 
-  // response.status = "denied";
-  // response.message = "error";
+  var email = req.body.email;
+  var passw = req.body.password;
 
-  response.status = "passed";
-  response.message = "success";
+  if (email === "test@mail.ru" && passw === "1234") {
+    response.status = "passed";
+    response.message = "success";
+  } else {
+    response.status = "denied";
+    response.message = "error";
+  }
 
   res.json(response);
 });
