@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap');
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +6,71 @@ body {
 
 a {
   color: #00B7FF;
+}
+html {
+  background-color: #333333;
+}
+h1{
+  color: white;
+  font-family: "IBM Plex Sans" ,sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+.log{
+  background: #2A2731;
+  border: 2px solid #4F91FF;
+  box-sizing: border-box;
+  border-radius: 13px;
+  font-family: "IBM Plex Sans" ,sans-serif;
+  height: 56px;
+  width: 350px;
+  color:#4F91FF;
+  font-size: 20px;
+  padding: 10px;
+}
+.cumin{
+  background: #76A9FF;
+  border-radius: 13px;
+  border: 2px solid #76A9FF;
+  font-family: "IBM Plex Sans" ,sans-serif;
+  font-size: 24px;
+  height: 56px;
+  width: 350px;
+  font-weight: 400;
+  cursor: pointer
+}
+input::-webkit-input-placeholder { 
+  position: absolute;
+  height: 22px;
+  left: 16px;
+  right: 16px;
+  top: 6px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.22px;
+  color: #76A9FF;
+
+}
+.login_screen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+a{
+  margin-top: -15px;
+  color: white;
+  font-family: "IBM Plex Sans" ,sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1.5 px;
+}
+#svg_logo{
+  width: 60px;
+  margin-right: 10px;
 }
