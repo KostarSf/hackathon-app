@@ -7,10 +7,15 @@ $("#login-form").on("submit", (e) => {
         "/itru/login",
         {"email": email, "password": passw},
         (data) => {
-            $("#login-message").html(data.status);
+            if (data.status === 'passed') {
+                window.location.href = "current_day";
+            } else {
+                alert(data.status);
+            }
+
         },
         "json"
     ).fail((mess) => {
-        $("#login-message").html(`ERROR: ${mess.status}`);
+        alert(mess.status);
     });
 })
