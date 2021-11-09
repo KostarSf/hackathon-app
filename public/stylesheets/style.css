@@ -9,13 +9,26 @@ a {
 }
 html {
   background-color: #333333;
+  user-select: none;
 }
 h1{
   color: white;
-  font-family: "IBM Plex Sans" ,sans-serif;
+
   display: flex;
   flex-direction: row;
+  margin: 0;
+  margin-bottom: 10px;
 }
+#sub_title {
+  color: #b8b8b8;
+  font-family: "Arial" ,sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .log{
   background: #2A2731;
   border: 2px solid #4F91FF;
@@ -28,7 +41,7 @@ h1{
   font-size: 20px;
   padding: 10px;
 }
-.cumin{
+.logbtn{
   background: #76A9FF;
   border-radius: 13px;
   border: 2px solid #76A9FF;
@@ -37,9 +50,10 @@ h1{
   height: 56px;
   width: 350px;
   font-weight: 400;
-  cursor: pointer
+  cursor: pointer;
+  margin-top: 30px;
 }
-input::-webkit-input-placeholder { 
+input::-webkit-input-placeholder {
   position: absolute;
   height: 22px;
   left: 16px;
@@ -61,8 +75,7 @@ input::-webkit-input-placeholder {
   flex-direction: column;
   align-items: center;
 }
-a{
-  margin-top: -15px;
+#reg_link {
   color: white;
   font-family: "IBM Plex Sans" ,sans-serif;
   text-decoration: none;
