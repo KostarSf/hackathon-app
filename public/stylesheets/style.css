@@ -181,14 +181,14 @@ main {
 }
 
 .fake_page {
-  width: 350px;
+  width: 100%;
   margin: auto;
   user-select: none;
 }
 
 .fake_page_wrapper {
 
-  margin: -50px;
+  margin: -58px;
   display: flex;
   align-items: center;
 }
