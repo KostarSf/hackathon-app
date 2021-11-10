@@ -15,12 +15,10 @@ class Database {
         const MongoClient = require('mongodb').MongoClient;
         this.#assert = require('assert');
 
-        //const url = 'mongodb://localhost:27017';
         const url = 'mongodb+srv://kostar:JExJliN2LER6cN8A@cluster0.8mdgo.mongodb.net/?retryWrites=true&w=majority';
 
         this.#dbName = 'itru';
         this.#clUsers = 'users';
-        //this.#clAllowed = 'allowed_emails';
         this.#client = new MongoClient(url, { useUnifiedTopology: true, useNewUrlParser: true });
 
         this.connection_check();
@@ -34,7 +32,6 @@ class Database {
 
         console.log(`[INFO]  Connecting to database ${this.#dbName}...`);
         this.#client.connect((err) => {
-            //this.#assert.strictEqual(null, err);
             if (err === null || err === undefined) {
                 const db = this.#client.db(this.#dbName);
 
@@ -76,7 +73,6 @@ class Database {
         var matchPassword = false;
 
         var user = await this.#db_findOne(this.#clUsers, { "email": email });
-        //var md5 = require('md5');
 
         if (user !== null) {
             hasInUsers = true;
