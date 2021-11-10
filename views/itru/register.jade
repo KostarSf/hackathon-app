@@ -6,6 +6,14 @@ block content
       span(class="color_main") IT
       | RU
 
+    p(id="sub_title")
+      | Интерактивное Расписание
+      br
+      | для Российских Университетов
+      br
+      br
+      | Регистрация
+
     div(id="reg_screen_1")
       form(method="post", id="reg-form-1")
         p
@@ -14,30 +22,20 @@ block content
           input(class="log", type="password", name="password", id="reg-password", placeholder="Пароль", required)
         p
           input(class="log", type="password", name="password2", id="reg-password2", placeholder="Подтвердите пароль", required)
-        p
-          select(name="university_name" id="university_name" required)
-            option(value="0" disabled selected) Учебное заведение
-            option(value="1") ГМУ им. адм. Ф.Ф. Ушакова
-            option(value="2") Университет Радиоэлектроники
+            
+        p(class = "selection")
+          svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M19.7143 10.2856C19.7143 16.2856 12 21.4284 12 21.4284C12 21.4284 4.28571 16.2856 4.28571 10.2856C4.28571 8.23962 5.09846 6.27746 6.54517 4.83075C7.99188 3.38404 9.95404 2.57129 12 2.57129C14.0459 2.57129 16.0081 3.38404 17.4548 4.83075C18.9015 6.27746 19.7143 8.23962 19.7143 10.2856Z" stroke="#787885" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M12 12.8572C13.4202 12.8572 14.5714 11.7059 14.5714 10.2858C14.5714 8.86562 13.4202 7.71436 12 7.71436C10.5799 7.71436 9.42859 8.86562 9.42859 10.2858C9.42859 11.7059 10.5799 12.8572 12 12.8572Z" stroke="#787885" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+          select(class="select" name="university" id="university_name" required)
+              option(disabled class="opt" selected) Учебное заведение
+              option(value="GMU" class="opt") ГМУ им.Адм.Ф.Ф.Ушакова
+              option(value="GMU" class="opt") XXXXXXX
         p
           input(class="logbtn" type="submit", value="Продолжить", id="reg-cont")
 
     div(id="reg_screen_2" class="screen_hide")
-      form(method="post", id="reg-form-2")
-        p
-          input(class="log", type="text", name="fio", id="reg-fio", placeholder="ФИО", required)
-        p Выберите тип
-        p
-          input(type="radio", name="user-type", id="rad-editor" required)
-          label(for="rad-editor") Редактор
-        p
-          input(type="radio", name="user-type", id="rad-reader" required)
-          label(for="rad-reader") Читатель
-        p
-          input(class="log", type="tel", name="tel", id="reg-tel", placeholder="Телефон", required)
-        p
-          input(class="logbtn" type="submit", value="Начать работу", id="reg-submit")
-
 
 block scripts
   script(src="/js/register.js")
