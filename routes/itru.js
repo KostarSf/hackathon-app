@@ -67,7 +67,10 @@ router.post('/register', (req, res) => {
     if (error == null) {
       database.register_user({
         email: req.body.email,
-        hash: req.body.password
+        hash: req.body.password,
+        fio: req.body.fio,
+        type: req.body.type,
+        univ: req.body.univ
       }, (err) => {
         if (err == null) {
           response.status = "passed";
