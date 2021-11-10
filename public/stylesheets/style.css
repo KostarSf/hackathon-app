@@ -110,10 +110,16 @@ main {
   justify-content: center;
   flex-direction: row;
 }
-#select{
-  font-family: "IBM Plex Sans" ,sans-serif;
-  border: none;
+.select{
   background: transparent;
+  font-family:"IBM Plex Sans" ,sans-serif;
+  color: #76A9FF;
+  border: 0ch;
+  border-radius: 100px;
+  padding: 3px;
   text-align: center;
-  color: #00B7FF;
+}
+.opt{
+  background-color: #333333;
+  color:#76A9FF;
 }
