@@ -1,5 +1,6 @@
 var user_email = "";
 var user_password = "";
+var univ = ""
 
 $("#reg-form-1").on("submit", (e) => {
     e.preventDefault();
@@ -7,6 +8,7 @@ $("#reg-form-1").on("submit", (e) => {
 
     user_email = $("#reg-email").val();
     user_password = $("#reg-password").val();
+    univ = $("#university_name").val();
 
     if ($("#university_name").val() === null || $("#university_name").val() === "0") {
         no_errors = false;
@@ -42,7 +44,7 @@ $("#reg-form-2").on("submit", (e) => {
 
     $.post(
         "/itru/register",
-        { "email": user_email, "password": user_password},
+        { "email": user_email, "password": user_password, "fio": fio, "type": acc_type, "univ": univ},
         (data) => {
             if (data.status === "passed") {
                 window.location.href = "current_day";
