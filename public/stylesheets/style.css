@@ -104,3 +104,16 @@ main {
 .color_main {
   color: #76A9FF;
 }
+.selection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+#select{
+  font-family: "IBM Plex Sans" ,sans-serif;
+  border: none;
+  background: transparent;
+  text-align: center;
+  color: #00B7FF;
+}
