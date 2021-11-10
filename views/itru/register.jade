@@ -7,6 +7,37 @@ block content
       | RU
 
     div(id="reg_screen_1")
-
+      form(method="post", id="reg-form-1")
+        p
+          input(class="log", type="email", name="email", id="reg-email", placeholder="Почта", required)
+        p
+          input(class="log", type="password", name="password", id="reg-password", placeholder="Пароль", required)
+        p
+          input(class="log", type="password", name="password2", id="reg-password2", placeholder="Подтвердите пароль", required)
+        p
+          select(name="university_name" id="university_name" required)
+            option(value="0" disabled selected) Учебное заведение
+            option(value="1") ГМУ им. адм. Ф.Ф. Ушакова
+            option(value="2") Университет Радиоэлектроники
+        p
+          input(class="logbtn" type="submit", value="Продолжить", id="reg-cont")
 
     div(id="reg_screen_2" class="screen_hide")
+      form(method="post", id="reg-form-2")
+        p
+          input(class="log", type="text", name="fio", id="reg-fio", placeholder="ФИО", required)
+        p Выберите тип
+        p
+          input(type="radio", name="user-type", id="rad-editor" required)
+          label(for="rad-editor") Редактор
+        p
+          input(type="radio", name="user-type", id="rad-reader" required)
+          label(for="rad-reader") Читатель
+        p
+          input(class="log", type="tel", name="tel", id="reg-tel", placeholder="Телефон", required)
+        p
+          input(class="logbtn" type="submit", value="Начать работу", id="reg-submit")
+
+
+block scripts
+  script(src="/js/register.js")
