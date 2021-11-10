@@ -30,7 +30,15 @@ router.post('/login', (req, res) => {
 });
 
 router.get('/current_day', (req, res) => {
-  res.render('itru/current_day', { title: 'ITRU - Текущее занятие' });
-})
+  res.render('itru/current_day', { title: 'ITRU - Текущие занятия' });
+});
+
+router.get('/recover', (req, res) => {
+  res.render('itru/recover', { title: 'ITRU - Восстановление пароля' });
+});
+
+router.get('/register', (req, res) => {
+  res.render('itru/register', { title: 'ITRU - Регистрация' });
+});
 
 module.exports = router;
