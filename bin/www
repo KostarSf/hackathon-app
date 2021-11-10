@@ -6,24 +6,28 @@
 
 var app = require('../app');
 var debug = require('debug')('hackathon-app:server');
-var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
+/*
+var https = require('https');
+var fs = require('fs');
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+const options = {
+  cert: fs.readFileSync('./ssl/kostarsf.space.csr'),
+  key: fs.readFileSync('./ssl/kostarsf.space.key')
+};
+
+var server = https.createServer(options, app);
+*/
+
+var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
-
 var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
 
 server.listen(port);
 server.on('error', onError);
