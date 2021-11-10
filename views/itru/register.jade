@@ -2,17 +2,18 @@ extends layout
 
 block content
   main
-    h1 <svg id="svg_logo" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.69 115.7"><defs><style>.cls-1{fill:#8e7343;stroke:#543d1d;stroke-width:3px;}.cls-1,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{stroke-miterlimit:10;}.cls-2{fill:#adadad;stroke:#848484;}.cls-3{fill:#c4c4c4;}.cls-3,.cls-5{stroke:#919191;}.cls-4,.cls-5,.cls-9{fill:none;}.cls-4{stroke:#000;}.cls-6{fill:#b4d6d2;stroke:#634e2c;}.cls-7{fill:#826f54;}.cls-7,.cls-9{stroke:#826f54;}.cls-10,.cls-8{fill:#e2e2e2;}.cls-8{stroke:#e2e2e2;}</style></defs><path class="cls-1" d="M92.5,132.5l-78,27s-4,1-4-4l13-55a319.7,319.7,0,0,0,71-18,320.15,320.15,0,0,0,67-35l33,53-82,36s-6,1-11-2Z" transform="translate(-9 -45.38)"/><path class="cls-2" d="M96,130.72s-4.5-7.22-26.5,1.78-53,22-53,22l13-66,63-8,69-27,28,45-79,36Z" transform="translate(-9 -45.38)"/><path class="cls-3" d="M97.41,128S91.5,111.5,23.5,145.5l12-60s40-23,52-15c0,0,6,3,7,8,0,0,2-20,60-32a141.13,141.13,0,0,1,24,46s-70.34,27.22-76.17,39.61L97,130.72S99.32,129.5,97.41,128Z" transform="translate(-9 -45.38)"/><path class="cls-4" d="M192.5,133.5" transform="translate(-9 -45.38)"/><line class="cls-5" x1="85.18" y1="39.25" x2="89.82" y2="73.49"/><ellipse class="cls-6" cx="69.11" cy="100.13" rx="18.5" ry="12" transform="translate(-44.63 -7.15) rotate(-24.8)"/><ellipse class="cls-6" cx="122.43" cy="84.17" rx="12.5" ry="19" transform="translate(18.52 153.1) rotate(-84.8)"/><path class="cls-7" d="M88.08,86.57S89,98.7,85.45,104.4l-2.92.74L80.36,107l1.74,1.15,2.17-1.81,2.66,0a33.41,33.41,0,0,0,3.55-19.56S89.16,85.66,88.08,86.57Z" transform="translate(-9 -45.38)"/><path class="cls-7" d="M99.09,83.59s6.35,11.69,13.42,14.32L116,96.47l3.34.09-1.11,2.3-3.33-.07-2.73,2a31.85,31.85,0,0,1-15.4-15.22S97.42,83.55,99.09,83.59Z" transform="translate(-9 -45.38)"/><path class="cls-7" d="M90.73,92.39s7.3-.9,8.3-2.82l1.4,1.92s-6.77,3.62-9.84,2.33Z" transform="translate(-9 -45.38)"/><rect class="cls-7" x="51.95" y="110.59" width="2" height="2.83" transform="translate(72.7 -53.88) rotate(38.72)"/><rect class="cls-7" x="141.31" y="84.54" width="2.88" height="3.28" transform="translate(4.33 -64.34) rotate(7.97)"/><polygon class="cls-8" points="56.38 44.37 51.78 67.7 54.21 68.18 58.8 43.35 56.38 44.37"/><polygon class="cls-8" points="64.28 42.07 59.44 67.02 62.41 66.61 67.14 41.71 64.28 42.07"/><ellipse class="cls-9" cx="69.11" cy="100.13" rx="18.5" ry="12" transform="translate(-44.63 -7.15) rotate(-24.8)"/><polygon class="cls-8" points="108.07 27.32 103.47 48.28 105.37 48.94 110.18 26.81 108.07 27.32"/><polygon class="cls-10" points="114.52 26.77 109.58 50.52 111.95 51.13 117.1 26.07 114.52 26.77"/><ellipse class="cls-9" cx="122.43" cy="84.17" rx="12.5" ry="19" transform="translate(18.52 153.1) rotate(-84.8)"/></svg>
+    h1
+      img(src="/image/logo_black.png" id="svg_logo")
       span(class="color_main") IT
       | RU
 
-    p(id="sub_title")
-      | Интерактивное Расписание
-      br
-      | для Российских Университетов
-      br
-      br
-      | Регистрация
+    //- p(id="sub_title")
+    //-   | Интерактивное Расписание
+    //-   br
+    //-   | для Российских Университетов
+    //-   br
+    //-   br
+    //-   | Регистрация
 
     div(id="reg_screen_1")
       form(method="post", id="reg-form-1")
@@ -22,20 +23,35 @@ block content
           input(class="log", type="password", name="password", id="reg-password", placeholder="Пароль", required)
         p
           input(class="log", type="password", name="password2", id="reg-password2", placeholder="Подтвердите пароль", required)
-            
+
         p(class = "selection")
           svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
             path(d="M19.7143 10.2856C19.7143 16.2856 12 21.4284 12 21.4284C12 21.4284 4.28571 16.2856 4.28571 10.2856C4.28571 8.23962 5.09846 6.27746 6.54517 4.83075C7.99188 3.38404 9.95404 2.57129 12 2.57129C14.0459 2.57129 16.0081 3.38404 17.4548 4.83075C18.9015 6.27746 19.7143 8.23962 19.7143 10.2856Z" stroke="#787885" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
             path(d="M12 12.8572C13.4202 12.8572 14.5714 11.7059 14.5714 10.2858C14.5714 8.86562 13.4202 7.71436 12 7.71436C10.5799 7.71436 9.42859 8.86562 9.42859 10.2858C9.42859 11.7059 10.5799 12.8572 12 12.8572Z" stroke="#787885" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
           script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
           select(class="select" name="university" id="university_name" required)
-              option(disabled class="opt" selected) Учебное заведение
-              option(value="GMU" class="opt") ГМУ им.Адм.Ф.Ф.Ушакова
-              option(value="GMU" class="opt") XXXXXXX
+            option(value="0" disabled selected) Учебное заведение
+            option(value="1") ГМУ им. адм. Ф.Ф. Ушакова
+            option(value="2") Университет Радиоэлектроники
         p
           input(class="logbtn" type="submit", value="Продолжить", id="reg-cont")
 
     div(id="reg_screen_2" class="screen_hide")
+      form(method="post", id="reg-form-2")
+        p
+          input(class="log", type="text", name="fio", id="reg-fio", placeholder="ФИО", required)
+        p(class="p-desc") Выберите тип
+        p
+          input(type="radio", class="rad-switch rad-red" name="user-type", value="1" id="rad-editor" required)
+          label(for="rad-editor") Редактор
+        p
+          input(type="radio", class="rad-switch" name="user-type", value="0" , id="rad-reader" required)
+          label(for="rad-reader") Читатель
+        p
+          input(class="log", type="tel", name="tel", id="reg-tel", placeholder="Телефон", required)
+        p
+          input(class="logbtn" type="submit", value="Начать работу", id="reg-submit")
+
 
 block scripts
   script(src="/js/register.js")

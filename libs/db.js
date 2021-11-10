@@ -35,17 +35,18 @@ class Database {
         console.log(`[INFO]  Connecting to database ${this.#dbName}...`);
         this.#client.connect((err) => {
             //this.#assert.strictEqual(null, err);
-            if (err === null) {
+            if (err === null || err === undefined) {
                 const db = this.#client.db(this.#dbName);
 
                 db.listCollections().toArray((err, colls) => {
-                    if (err === null) {
+                    if (err === null || err === undefined) {
                         console.log("[INFO]  Connected successfully to database");
                     } else {
                         console.log(err.name + ": " + err.message);
                     }
                 });
             } else {
+                console.log(err);
                 console.log(
                     `[ERROR] Database connection error\n` +
                     `        ${err.name}: ${err.message}\n` +
@@ -75,7 +76,7 @@ class Database {
         var matchPassword = false;
 
         var user = await this.#db_findOne(this.#clUsers, { "email": email });
-        var md5 = require('md5');
+        //var md5 = require('md5');
 
         if (user !== null) {
             hasInUsers = true;
@@ -129,7 +130,7 @@ class Database {
         if (hasInUsers) {
             error.message = "already_registered";
         } else {
-            error.message = "restricted_email";
+            hasNoErrors = true;
         }
 
         hasNoErrors ? console.log("Status: User can be registered") : console.log("Status: " + error.message);
