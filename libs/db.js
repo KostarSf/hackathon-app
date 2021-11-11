@@ -1,9 +1,11 @@
+var fs = require('fs');
+var mongo_url = fs.readFileSync('./libs/mongodb_credentials');
+
 class Database {
     #client;
 
     #dbName;
     #clUsers;
-    #clAllowed;
 
     #assert;
 
@@ -15,7 +17,7 @@ class Database {
         const MongoClient = require('mongodb').MongoClient;
         this.#assert = require('assert');
 
-        const url = 'mongodb+srv://kostar:JExJliN2LER6cN8A@cluster0.8mdgo.mongodb.net/?retryWrites=true&w=majority';
+        const url = mongo_url.toString('utf8');
 
         this.#dbName = 'itru';
         this.#clUsers = 'users';
